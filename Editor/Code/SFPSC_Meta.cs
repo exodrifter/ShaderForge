@@ -311,7 +311,9 @@ namespace ShaderForge {
 			if( mc == null )
 				mc = new MenuCommand( this, 0 );
 			Material temp = new Material( Shader.Find("Hidden/Shader Forge/PresetUnlit") ); // This will make it highlight none of the shaders inside.
+#pragma warning disable CS0618 // Type or member is obsolete
 			UnityEditorInternal.InternalEditorUtility.SetupShaderMenu( temp ); // Rebuild shader menu
+#pragma warning restore CS0618 // Type or member is obsolete
 			DestroyImmediate( temp, true ); // Destroy material
 			EditorUtility.DisplayPopupMenu( r, "CONTEXT/ShaderPopup", mc ); // Display shader popup
 		}
